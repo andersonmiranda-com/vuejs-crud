@@ -3,9 +3,7 @@
     <Input :task="task" />
   </form>
 
-  <p class="mt-3">
-    {{ task }}
-  </p>
+  <hr />
 
   <ItemsList />
 </template>

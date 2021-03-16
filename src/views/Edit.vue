@@ -1,7 +1,7 @@
 <template>
-  Edit {{ $route.params.id }} - {{ task }}
+  <h2>Editing Task</h2>
 
-  <form @submit.prevent="updateItem(task)">
+  <form @submit.prevent="updateTask(task)">
     <Input :task="task" />
   </form>
 </template>
@@ -21,7 +21,7 @@ export default {
   methods: {
     ...mapActions(["getItem", "updateItem"]),
     updateTask() {
-      updateItem(task);
+      this.updateItem(this.task);
       router.push("/");
     },
   },
