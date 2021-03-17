@@ -28,6 +28,10 @@ export default {
   created() {
     this.getItem(this.$route.params.id);
   },
+  beforeMount() {
+    //redirect to Home if task is not found (empty object)
+    if (!this.task.id) router.push("/");
+  },
 };
 </script>
 

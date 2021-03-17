@@ -19,7 +19,9 @@ export default createStore({
       state.tasks = state.tasks.filter(item => item.id !== payload)
     },
     get(state, payload) {
-      state.task = state.tasks.find(item => item.id === payload)
+      let task = state.tasks.find(item => item.id === payload)
+      if (!task) task = {}
+      state.task = task
     },
     update(state, payload) {
       state.tasks = state.tasks.map(item => item.id === payload.id ? payload : item)

@@ -34,8 +34,6 @@ export default {
   methods: {
     ...mapActions(["addItem"]),
     sendForm() {
-      console.log(this.task);
-
       this.task.id = shortid.generate();
       this.addItem(this.task);
       this.task = {
