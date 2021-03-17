@@ -26,13 +26,13 @@ export default {
         id: "",
         name: "",
         categories: [],
-        status: "",
+        status: "Normal",
         number: 0,
       },
     };
   },
   methods: {
-    ...mapActions(["addItem"]),
+    ...mapActions(["addItem","loadItemsFromLocalStorage"]),
     sendForm() {
       this.task.id = shortid.generate();
       this.addItem(this.task);
@@ -43,6 +43,9 @@ export default {
         number: 0,
       };
     },
+  },
+  created() {
+    this.loadItemsFromLocalStorage()
   },
 };
 </script>
